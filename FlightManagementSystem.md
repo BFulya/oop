@@ -1,5 +1,5 @@
 ```mermaid 
-ClassDiagram
+classDiagram
 
 class Airline {
   - id : String
