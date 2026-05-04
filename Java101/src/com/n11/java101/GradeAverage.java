@@ -1,36 +1,33 @@
-package com.n11.java101;
+package com.n11.java101.lectures;
 
 import java.util.Scanner;
 
-public class GradeAverage {
+public class Grade {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Math grade: ");
-        int math = input.nextInt();
+        String[] subjects = {"Math", "Physics", "Turkish", "Chemistry", "Music"};
+        int sum = 0, count = 0;
 
-        System.out.print("Physics grade: ");
-        int physics = input.nextInt();
+        for (String subject : subjects) {
+            System.out.print("Enter " + subject + " grade: ");
+            int grade = input.nextInt();
 
-        System.out.print("Chemistry grade: ");
-        int chemistry = input.nextInt();
+            if (grade >= 0 && grade <= 100) {
+                sum += grade;
+                count++;
+            }
+        }
 
-        System.out.print("Turkish grade: ");
-        int turkish = input.nextInt();
+        if (count > 0) {
+            double average = (double) sum / count;
+            System.out.println("Average: " + average);
+            System.out.println(average >= 55 ? "You passed!" : "You failed!");
+        } else {
+            System.out.println("No valid grades entered.");
+        }
 
-        System.out.print("History grade: ");
-        int history = input.nextInt();
-
-        System.out.print("Music grade: ");
-        int music = input.nextInt();
-
-        double average = (math + physics + chemistry + turkish + history + music) / 6.0;
-
-        System.out.println("Average: " + average);
-
-        String result = (average > 60) ? "Passed the class" : "Failed the class";
-
-        System.out.println(result);
+        input.close();
     }
 }
