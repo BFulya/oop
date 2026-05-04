@@ -7,57 +7,28 @@ public class Grade {
 
         Scanner input = new Scanner(System.in);
 
-        int sum = 0;
-        int count = 0;
+        String[] subjects = {"Math", "Physics", "Turkish", "Chemistry", "Music"};
+        int sum = 0, count = 0;
 
-        System.out.print("Enter Math grade: ");
-        int math = input.nextInt();
-        if (math >= 0 && math <= 100) {
-            sum += math;
-            count++;
-        }
+        for (String subject : subjects) {
+            System.out.print("Enter " + subject + " grade: ");
+            int grade = input.nextInt();
 
-        System.out.print("Enter Physics grade: ");
-        int physics = input.nextInt();
-        if (physics >= 0 && physics <= 100) {
-            sum += physics;
-            count++;
-        }
-
-        System.out.print("Enter Turkish grade: ");
-        int turkish = input.nextInt();
-        if (turkish >= 0 && turkish <= 100) {
-            sum += turkish;
-            count++;
-        }
-
-        System.out.print("Enter Chemistry grade: ");
-        int chemistry = input.nextInt();
-        if (chemistry >= 0 && chemistry <= 100) {
-            sum += chemistry;
-            count++;
-        }
-
-        System.out.print("Enter Music grade: ");
-        int music = input.nextInt();
-        if (music >= 0 && music <= 100) {
-            sum += music;
-            count++;
+            if (grade >= 0 && grade <= 100) {
+                sum += grade;
+                count++;
+            }
         }
 
         if (count > 0) {
             double average = (double) sum / count;
             System.out.println("Average: " + average);
-
-            if (average >= 55) {
-                System.out.println("You passed!");
-            } else {
-                System.out.println("You failed!");
-            }
+            System.out.println(average >= 55 ? "You passed!" : "You failed!");
         } else {
             System.out.println("No valid grades entered.");
         }
 
         input.close();
     }
+}
 }
