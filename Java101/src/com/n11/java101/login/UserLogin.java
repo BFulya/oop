@@ -7,7 +7,7 @@ public class UserLogin {
 
         Scanner input = new Scanner(System.in);
 
-        String correctPassword = "java123"; // mevcut şifre
+        String correctPassword = "java123"; //current password
 
         System.out.print("Enter your password: ");
         String password = input.nextLine();
