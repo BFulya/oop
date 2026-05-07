@@ -2,7 +2,7 @@ package com.n11.java101.foursmultiple;
 
 import java.util.Scanner;
 
-public class FoursLoop {
+public class FoursMultiple {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
