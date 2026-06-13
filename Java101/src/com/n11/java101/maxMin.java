@@ -1,4 +1,5 @@
 package com.n11.java101;
+
 import java.util.Scanner;
 
 public class maxMin {
